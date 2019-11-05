@@ -1,0 +1,39 @@
+﻿<html>
+    <head>
+    	<meta charset="UTF-8">
+    <script  src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+    </head>	
+<body>
+	<script>
+	
+ 
+</script>
+<script>
+var pm25;
+var o3;
+var no2;
+function duqu(j){
+
+	$.ajax({
+   url: "myjson.json",//json文件位置
+   type: "GET",//请求方式为get
+   
+   dataType: "json", //返回数据格式为json
+    cache:false, 
+    async:false, 
+    success: function(data) {//请求成功完成后要执行的方法 
+       //each循环 使用$.each方法遍历返回的数据dat
+           
+            pm25=data.AirData[j].PM25;
+            o3=data.AirData[j].O3;
+            no2=data.AirData[j].NO2;
+   }
+})
+  //window.alert(str0);
+}
+    </script><script src="main.js" type="text/javascript"></script>
+    <script src="particle.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@0.7.3/lib/p5.min.js" type="text/javascript"></script>
+</body>
+</html>
